@@ -2,12 +2,38 @@
 
 options="Subdomains Ports Subdomains-and-Ports"
 
+trap ctrl_c INT
+
+function ctrl_c(){
+	clear
+	echo "Exit"
+	sleep 2
+	exit 0
+}
+
+function checktools(){
+
+dependencies=(html2text jq)
+
+	for program in $dependencies ; do
+	test -f /usr/bin/$program
+	if ["$(echo $?)" == "0"] ; then
+	echo "no esta instalada";
+	else
+	echo "esta instalada"
+	fi;
+	done
+
+}
+
+
 select opcion in $options;
 
 do
 
 	if [ $opcion = "Subdomains" ]; then
-
+		checktools
+		sleep 2
 		clear
 		echo -n "Write the domain name : "
 		read host
