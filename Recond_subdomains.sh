@@ -13,16 +13,28 @@ function ctrl_c(){
 
 function checktools(){
 
-dependencies=(html2text jq)
+  dependencies=(html2text jq)
 
 	for program in $dependencies ; do
 	test -f /usr/bin/$program
 	if ["$(echo $?)" == "0"] ; then
 	echo "no esta instalada";
+	sleep 2
+	echo "installing"
+	apt-get install html2text
+	echo "finish"
 	else
-	echo "esta instalada"
+	echo "All tools are installed OK!"
 	fi;
 	done
+
+}
+
+function CheckHost(){
+
+	clear
+	echo "Checking hosts alive"
+	cat $host-sub-total | httpx -silent | tee $host-alive
 
 }
 
@@ -32,11 +44,10 @@ select opcion in $options;
 do
 
 	if [ $opcion = "Subdomains" ]; then
-		checktools
-		sleep 2
 		clear
 		echo -n "Write the domain name : "
 		read host
+		echo "0%"
 		curl -s -d  domain=$host  -X POST https://osint.sh/subdomain/ | grep -Eo '(http|https)://[^/"]+' | grep $host >> $host-sub
 		curl -s "https://crt.sh/?q=%25.$host&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' >> $host-sub
 		curl -s "https://dns.bufferover.run/dns?q=.$host" |jq -r .FDNS_A[] | sed -s 's/,/\n/g' >> $host-sub
@@ -48,6 +59,10 @@ do
 		curl -s "https://riddler.io/search/exportcsv?q=pld:$host" | grep -Po "(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | sort -u >> $host-sub
 		curl -s "https://securitytrails.com/list/apex_domain/$host" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | grep ".$host" | sort -u >> $host-sub
 		cat $host-sub | sort -u | uniq | tee $host-sub-total
+		sleep 1
+		wc -l $host-sub-total ; echo "Founded"
+		echo "===Checking hosts alive===="
+		CheckHost
 
 	elif [ $opcion = "Ports" ]; then
 
