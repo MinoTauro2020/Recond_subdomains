@@ -1,0 +1,28 @@
+[Vuln-Info][wordpress-user-enum-01][Tentative-Low] - https://lalga.com/wp-json/wp/v2/users/
+[Sign-Info][Tentative-Low] - /root/.jaeles/base-signatures/common/wordpress-user-enum.yaml - Wordpress REST API user enumeration
+[Detect-String] - StatusCode() == 200 && StringSearch("response", "id")
+
+>>>>--------------------------------------------------
+GET https://lalga.com/wp-json/wp/v2/users/ HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+
+--------------------------------------------------<<<<
+200 OK HTTP/1.1 
+X-Wp-Total: 1
+Server: nginx
+Vary: Origin
+X-Powered-By: PHP/5.6.36
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Headers: Authorization, Content-Type
+Allow: GET
+Date: Mon, 08 Feb 2021 15:13:22 GMT
+Access-Control-Expose-Headers: X-WP-Total, X-WP-TotalPages
+Link: <https://lalga.com/wp-json/>; rel="https://api.w.org/"
+X-Wp-Totalpages: 1
+Content-Type: application/json; charset=UTF-8
+X-Robots-Tag: noindex
+Total Length: 975
+Response Time: 1.077584
+
+[{"id":1,"name":"admin","url":"","description":"","link":"https:\/\/lalga.com\/author\/admin\/","slug":"admin","avatar_urls":{"24":"https:\/\/secure.gravatar.com\/avatar\/d421137372fd4bd2aeb9afa6c106cc9e?s=24&d=mm&r=g","48":"https:\/\/secure.gravatar.com\/avatar\/d421137372fd4bd2aeb9afa6c106cc9e?s=48&d=mm&r=g","96":"https:\/\/secure.gravatar.com\/avatar\/d421137372fd4bd2aeb9afa6c106cc9e?s=96&d=mm&r=g"},"meta":[],"_links":{"self":[{"href":"https:\/\/lalga.com\/wp-json\/wp\/v2\/users\/1"}],"collection":[{"href":"https:\/\/lalga.com\/wp-json\/wp\/v2\/users"}]}}]
+

@@ -1,0 +1,63 @@
+[wordpress-user-enum-01][Tentative-Low] - https://www.lalga.com/wp-json/wp/v2/users/ - out/www.lalga.com/wordpress-user-enum-01-b6b42a2b561b1000136fd77662ac8889d5fd2f51
+[wordpress-rest-api-01][Tentative-Medium] - https://www.lalga.com/wp-json/ - out/www.lalga.com/wordpress-rest-api-01-3765132ebc56e76b5645ff1021af1f0760c83393
+[wordpress-rest-api-01][Tentative-Medium] - https://www.lalga.com/wp-json/ - out/www.lalga.com/wordpress-rest-api-01-223ce3fdbe854c8520bb7ebb687c453eadd277c3
+[wordpress-user-enum-01][Tentative-Low] - https://www.lalga.com/wp-json/wp/v2/users/ - out/www.lalga.com/wordpress-user-enum-01-2d948c0acc243a1393ab702592c43f7068821bc6
+[wordpress-user-enum-01][Tentative-Low] - https://lalga.com/wp-json/wp/v2/users/ - out/lalga.com/wordpress-user-enum-01-66d7742a62d89bf164040aadb74c659b99c1f551
+[wordpress-user-enum-01][Tentative-Low] - https://lalga.com/wp-json/wp/v2/users/ - out/lalga.com/wordpress-user-enum-01-1425f59371e92c4d51df654b2b2a736aaaedea37
+[wordpress-rest-api-01][Tentative-Medium] - https://lalga.com/wp-json/ - out/lalga.com/wordpress-rest-api-01-df5988b05536d34b26f9b1e3712497382a71315b
+[wordpress-rest-api-01][Tentative-Medium] - https://lalga.com/wp-json/ - out/lalga.com/wordpress-rest-api-01-d62875914792d1de5298c7926378ba7711c05574
+[wordpress-rest-api-01][Tentative-Medium] - https://www.lalga.com/wp-json/ - out/www.lalga.com/wordpress-rest-api-01-6097da1b6975266b2eb0157b404f45e0aa727206
+[wordpress-user-enum-01][Tentative-Low] - https://www.lalga.com/wp-json/wp/v2/users/ - out/www.lalga.com/wordpress-user-enum-01-17c70ccd42b30281c479eeed064d436e2ef1bd13
+[wordpress-user-enum-01][Tentative-Low] - https://www.lalga.com/wp-json/wp/v2/users/ - out/www.lalga.com/wordpress-user-enum-01-2d8902322e5fab82a0389e9676b1709e96806b83
+[wordpress-rest-api-01][Tentative-Medium] - https://www.lalga.com/wp-json/ - out/www.lalga.com/wordpress-rest-api-01-5d034ab75e8a0f602534ceb5fad2d8a4908bfdc1
+[wordpress-user-enum-01][Tentative-Low] - https://multimedia.laliga.com/wp-json/wp/v2/users/ - out/multimedia.laliga.com/wordpress-user-enum-01-3931fa9dbaddfeb20a896d4e52d0c4c84e48a558
+[wordpress-user-enum-01][Tentative-Low] - https://multimedia.laliga.com/wp-json/wp/v2/users/ - out/multimedia.laliga.com/wordpress-user-enum-01-2bbd3d351f5a2b6d5fe446a12c59ab76292276ea
+[CVE-2019-7192][Tentative-Medium] - https://files-acreditaciones.laliga.com/photo/p/api/video.php - out/files-acreditaciones.laliga.com/CVE-2019-7192-eb6ef89050c9d37d04e089420cdf73b75d60e0e7
+[CVE-2019-7192][Tentative-Medium] - https://landings-des.laliga.com/photo/p/api/video.php - out/landings-des.laliga.com/CVE-2019-7192-ebedcdd5530349b7adec529be3211f65f70cfd2d
+[CVE-2019-7192][Tentative-Medium] - https://prem88.laliga.com/photo/p/api/video.php - out/prem88.laliga.com/CVE-2019-7192-9fc07b39d7ec7db735f9015941f06cf68043b1f4
+[CVE-2019-7192][Tentative-Medium] - https://prem88.laliga.com/photo/p/api/video.php - out/prem88.laliga.com/CVE-2019-7192-cd38ae0828a3716daa3db91b07407e8840e59d84
+[CVE-2019-7192][Tentative-Medium] - https://files-acreditaciones.laliga.com/photo/p/api/video.php - out/files-acreditaciones.laliga.com/CVE-2019-7192-27aa6c038b247400a038c9faff6d01e285cd2a2d
+[CVE-2019-7192][Tentative-Medium] - https://business-school-des.laliga.com/photo/p/api/video.php - out/business-school-des.laliga.com/CVE-2019-7192-bbf996e7d98712a11a3749e153b8a0e7db6f2ef7
+[Errors-Vulns-01][Tentative-Critical] - https://click.fans.laliga.com/select 1--xss<xssHere>aaa - out/click.fans.laliga.com/Errors-Vulns-01-5bbb575d35a3517793e2d7a76e424ba746e0adcd
+[Errors-Vulns-01][Tentative-Critical] - https://217.18.163.140/'-confirm`1`-' - out/217.18.163.140/Errors-Vulns-01-2c7a75aed436bbfb913141c839df7fddd0ebd3ad
+[Errors-Vulns-01][Tentative-Critical] - https://click.fans.laliga.com/select 1--xss<xssHere>aaa - out/click.fans.laliga.com/Errors-Vulns-01-fad7a9b4f4017fde49ac8e8f3e36d9e4728c8bdf
+[Errors-Vulns-01][Tentative-Critical] - http://fotografos-pre.laliga.com/'-confirm`1`-' - out/fotografos-pre.laliga.com/Errors-Vulns-01-de2d31461b9eb777fa54dd6f8b3a27ba319c4c5d
+[Errors-Vulns-01][Tentative-Critical] - http://fotografos-pre.laliga.com/select 1--xss<xssHere>aaa - out/fotografos-pre.laliga.com/Errors-Vulns-01-f2c31802a385c393e8e9d053f8b24bdc74a392bb
+[Errors-Vulns-01][Tentative-Critical] - https://cloud.fans.laliga.com/select 1--xss<xssHere>aaa - out/cloud.fans.laliga.com/Errors-Vulns-01-ee39199ffb4c5afa5c70f97baaacd32c5f3383b2
+[Errors-Vulns-01][Tentative-Critical] - http://fotografos-pre.laliga.com/'-confirm`1`-' - out/fotografos-pre.laliga.com/Errors-Vulns-01-ba5bdb8b56d248793bae99dacaf7dfa4441c1987
+[Errors-Vulns-01][Tentative-Critical] - http://fotografos-pre.laliga.com/select 1--xss<xssHere>aaa - out/fotografos-pre.laliga.com/Errors-Vulns-01-b856def8127311a86bb574cac66a017b06da94fb
+[Errors-Vulns-01][Tentative-Critical] - https://fanslaliga.laliga.com/select 1--xss<xssHere>aaa - out/fanslaliga.laliga.com/Errors-Vulns-01-481ea761d059a87736a07ba5e8aa6af15b0972a6
+[Errors-Vulns-01][Tentative-Critical] - https://files-deshisfantasy.laliga.com/%7C%7Cecho%20KRCSNE$((282037%2B31337))$(echo%20KRCSNE)KRCSNE - out/files-deshisfantasy.laliga.com/Errors-Vulns-01-fb7fc7fe0d54fac8d555e4bb128ab6e2dfb49e12
+[Errors-Vulns-01][Tentative-Critical] - https://161.71.48.234/select 1--xss<xssHere>aaa - out/161.71.48.234/Errors-Vulns-01-862bfdc62719ebe962a8da05558cd99a59606eee
+[Errors-Vulns-01][Tentative-Critical] - https://161.71.52.197/select 1--xss<xssHere>aaa - out/161.71.52.197/Errors-Vulns-01-c49f8419c36b5bc9402ff3dc7c59ffa44c4db442
+[Errors-Vulns-01][Tentative-Critical] - https://161.71.50.197/select 1--xss<xssHere>aaa - out/161.71.50.197/Errors-Vulns-01-05aaf2c9fd5676bac69643ea2394d94f4f623180
+[Errors-Vulns-01][Tentative-Critical] - https://fanslaliga.laliga.com/select 1--xss<xssHere>aaa - out/fanslaliga.laliga.com/Errors-Vulns-01-494a1b0e9eb450ec3b7f1728cbb4a9752139e452
+[Errors-Vulns-01][Tentative-Critical] - https://m88.laliga.com/echo%20AGIYMZ$((282037%2B31337))$(echo%20AGIYMZ)AGIYMZ - out/m88.laliga.com/Errors-Vulns-01-c2ed5a8951664dbecd197db18338c86cb2a2716d
+[Errors-Vulns-01][Tentative-Critical] - https://m88.laliga.com/'-confirm`1`-' - out/m88.laliga.com/Errors-Vulns-01-7f2f96537990712c5809a0ff312554e165e215f7
+[Errors-Vulns-01][Tentative-Critical] - https://m88.laliga.com/abc.txt - out/m88.laliga.com/Errors-Vulns-01-91b552efce4d7751235838e531958cdb9656809b
+[Errors-Vulns-01][Tentative-Critical] - https://m88.laliga.com/` - out/m88.laliga.com/Errors-Vulns-01-4e84b739832986d4d1ec569e199561799d5709de
+[Errors-Vulns-01][Tentative-Critical] - https://view.fans.laliga.com/select 1--xss<xssHere>aaa - out/view.fans.laliga.com/Errors-Vulns-01-58ba735739734595cce851d9c1f186b00ed0d1d1
+[Errors-Vulns-01][Tentative-Critical] - https://fanslaligapre.laliga.com/select 1--xss<xssHere>aaa - out/fanslaligapre.laliga.com/Errors-Vulns-01-c9d9868ebf4f9fc177cd68260095936fb9ff842e
+[Errors-Vulns-01][Tentative-Critical] - http://fanslaligapre.laliga.com/'-confirm`1`-' - out/fanslaligapre.laliga.com/Errors-Vulns-01-858ace2a5b31e863308cd3292687e8c66505f44f
+[Errors-Vulns-01][Tentative-Critical] - http://fanslaligapre.laliga.com/select 1--xss<xssHere>aaa - out/fanslaligapre.laliga.com/Errors-Vulns-01-ee8a7505ffd81d398df62d64437102a59e5f2cc8
+[Errors-Vulns-01][Tentative-Critical] - https://view.fans.laliga.com/select 1--xss<xssHere>aaa - out/view.fans.laliga.com/Errors-Vulns-01-45c0de5cd3aeae1d6f9f2dea507fa9d266a181cc
+[Errors-Vulns-01][Tentative-Critical] - http://cloud.fans.laliga.com/select 1--xss<xssHere>aaa - out/cloud.fans.laliga.com/Errors-Vulns-01-077a100c0f15d5975cfb3651c9dfc7087adfccbe
+[Host-Header_injection][Tentative-Medium] - https://fotografos.laliga.com - out/fotografos.laliga.com/Host-Header_injection-cb0bdae5e9685eb74ba7a23bba683c327b39c400
+[Host-Header_injection][Tentative-Medium] - http://fotografos-pre.laliga.com - out/fotografos-pre.laliga.com/Host-Header_injection-dea2416a787ae7c61bf64a503b9fe4f91763d85f
+[Host-Header_injection][Tentative-Medium] - http://fotografos-pre.laliga.com - out/fotografos-pre.laliga.com/Host-Header_injection-6dc2cc35546431a9bd42f1ed4a030a77bdc6e681
+[Host-Header_injection][Tentative-Medium] - http://autodiscover.laliga.com - out/autodiscover.laliga.com/Host-Header_injection-4e5ce0c9b6fd43a54b29030c6b4aeb9a0f84febf
+[Host-Header_injection][Tentative-Medium] - https://fotografos.laliga.com - out/fotografos.laliga.com/Host-Header_injection-880e3f10760ac3d311bf7662406d3ed4d0b9e065
+[Host-Header_injection][Tentative-Medium] - https://161.71.52.197 - out/161.71.52.197/Host-Header_injection-178febbcd0710c800fab1ea1540b30a0cd86a7b0
+[Host-Header_injection][Tentative-Medium] - https://memorias.laliga.com - out/memorias.laliga.com/Host-Header_injection-a6842c2b3b3d63db21671f429b835981eedc019e
+[Host-Header_injection][Tentative-Medium] - https://view.fans.laliga.com - out/view.fans.laliga.com/Host-Header_injection-65ef549fc60169c79ad37858470f7fa6e5be6d35
+[Host-Header_injection][Tentative-Medium] - https://laliga.com - out/laliga.com/Host-Header_injection-8d1b84271e54a5da4a0aa9a101788b89adea4000
+[Host-Header_injection][Tentative-Medium] - https://landings.laliga.com - out/landings.laliga.com/Host-Header_injection-9a774e68bad999130316bbbd3410998d3d820a6c
+[Host-Header_injection][Tentative-Medium] - https://memorias.laliga.com - out/memorias.laliga.com/Host-Header_injection-10cec5d9799c15bfbb23f965a23d11743f2d46bd
+[Host-Header_injection][Tentative-Medium] - https://wafweblaliga.westeurope.cloudapp.azure.com - out/wafweblaliga.westeurope.cloudapp.azure.com/Host-Header_injection-f95e933c34a67df8a0452aeabbd5cdd7bfc0bee6
+[Host-Header_injection][Tentative-Medium] - https://xtra.laliga.com - out/xtra.laliga.com/Host-Header_injection-a8a29c0604e08e17ff7745fcd39a9a54ce692be9
+[Host-Header_injection][Tentative-Medium] - https://landings.laliga.com - out/landings.laliga.com/Host-Header_injection-eee002438e309d88d26981af762dd7e5618b5d3a
+[Host-Header_injection][Tentative-Medium] - https://prememorias.laliga.com - out/prememorias.laliga.com/Host-Header_injection-1fd4e8859cf4714da535447260f42bea5bd1d4f9
+[Host-Header_injection][Tentative-Medium] - http://fanslaligapre.laliga.com - out/fanslaligapre.laliga.com/Host-Header_injection-7c98de3307fef61e45126de7e88434c178277943
+[Host-Header_injection][Tentative-Medium] - https://laliga.com - out/laliga.com/Host-Header_injection-e82333cd00cdc0f9a9c6fee87af77c6f766d67ac
+[Host-Header_injection][Tentative-Medium] - https://view.fans.laliga.com - out/view.fans.laliga.com/Host-Header_injection-8e2b27ae32e36006719fa95cec1c6ea7a8a62b8d
+[Host-Header_injection][Tentative-Medium] - https://xtra.laliga.com - out/xtra.laliga.com/Host-Header_injection-0b344b24c35d8e208fdb3177633a183b76290cd8

@@ -1,0 +1,30 @@
+[Vuln-Info][Host-Header_injection][Tentative-Medium] - http://autodiscover.laliga.com
+[Sign-Info][Tentative-Medium] - /root/.jaeles/base-signatures/fuzz/common/host-header-injection.yaml - Host Header Injection
+[Detect-String] - RegexSearch("resHeaders", "(?m)^(L|l)ocation: ((http|https)://)?")
+
+--------------------------------------------------
+[Matches String]
+Location: https://
+L
+https://
+https
+>>>>--------------------------------------------------
+GET http://autodiscover.laliga.com HTTP/1.1
+
+--------------------------------------------------<<<<
+301 Moved Permanently HTTP/1.1 
+Date: Mon, 08 Feb 2021 16:18:30 GMT
+Content-Length: 0
+Cache-Control: no-cache
+Pragma: no-cache
+Location: https://outlook.office365.com/owa/?realm=laliga.com&vd=autodiscover
+X-Requestid: 02058973-86da-4b88-8a24-9c4a2c0564f2
+X-Powered-By: ASP.NET
+Server: Microsoft-IIS/10.0
+Request-Id: d8461bf2-7655-48da-ab17-4c9b4645a576
+X-Feserver: MN2PR15CA0049MN2PR15CA0049
+Total Length: 360
+Response Time: 0.343471
+
+
+

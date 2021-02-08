@@ -1,0 +1,34 @@
+[Vuln-Info][Host-Header_injection][Tentative-Medium] - https://prememorias.laliga.com
+[Sign-Info][Tentative-Medium] - /root/.jaeles/base-signatures/fuzz/common/host-header-injection.yaml - Host Header Injection
+[Detect-String] - RegexSearch("resHeaders", "(?m)^(L|l)ocation: ((http|https)://)?")
+
+--------------------------------------------------
+[Matches String]
+Location: http://
+L
+http://
+http
+>>>>--------------------------------------------------
+GET https://prememorias.laliga.com HTTP/1.1
+
+--------------------------------------------------<<<<
+301 Moved Permanently HTTP/1.1 
+Server: Apache/2.4.25 (Debian)
+Location: http://prememorias.laliga.com/2017/es
+Date: Mon, 08 Feb 2021 16:18:34 GMT
+Content-Type: text/html; charset=iso-8859-1
+Content-Length: 333
+Total Length: 512
+Response Time: 0.394119
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://prememorias.laliga.com/2017/es">here</a>.</p>
+<hr>
+<address>Apache/2.4.25 (Debian) Server at prememorias.laliga.com Port 80</address>
+</body></html>
+
+

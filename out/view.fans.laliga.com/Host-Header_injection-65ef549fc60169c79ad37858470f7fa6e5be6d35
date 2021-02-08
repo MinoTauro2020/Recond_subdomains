@@ -1,0 +1,26 @@
+[Vuln-Info][Host-Header_injection][Tentative-Medium] - https://view.fans.laliga.com
+[Sign-Info][Tentative-Medium] - /root/.jaeles/base-signatures/fuzz/common/host-header-injection.yaml - Host Header Injection
+[Detect-String] - RegexSearch("resHeaders", "(?m)^(L|l)ocation: ((http|https)://)?")
+
+--------------------------------------------------
+[Matches String]
+Location: 
+L
+>>>>--------------------------------------------------
+GET https://view.fans.laliga.com HTTP/1.1
+
+--------------------------------------------------<<<<
+302 Found HTTP/1.1 
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Location: /Error.aspx
+Date: Mon, 08 Feb 2021 16:18:33 GMT
+Content-Length: 128
+Total Length: 268
+Response Time: 0.409167
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="/Error.aspx">here</a>.</h2>
+</body></html>
+
+

@@ -1,0 +1,21 @@
+[Vuln-Info][Errors-Vulns-01][Tentative-Critical] - https://161.71.50.197/select 1--xss<xssHere>aaa
+[Sign-Info][Tentative-Critical] - /root/.jaeles/base-signatures/fuzz/common/ErrorsAndVulns.yaml - Errors and Vulnerabilities Detection
+[Detect-String] - StringSearch("response", "<xssHere>")
+
+>>>>--------------------------------------------------
+GET https://161.71.50.197/select 1--xss<xssHere>aaa HTTP/1.1
+
+--------------------------------------------------<<<<
+302 Found HTTP/1.1 
+Content-Type: text/html; charset=utf-8
+Location: /Error.aspx?aspxerrorpath=/select%201--xss<xssHere>aaa
+Date: Mon, 08 Feb 2021 16:13:22 GMT
+Content-Length: 174
+Total Length: 334
+Response Time: 2.421834
+
+<html><head><title>Object moved</title></head><body>
+<h2>Object moved to <a href="/Error.aspx?aspxerrorpath=/select%201--xss&lt;xssHere>aaa">here</a>.</h2>
+</body></html>
+
+
