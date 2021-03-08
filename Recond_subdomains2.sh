@@ -15,23 +15,36 @@ function ctrl_c(){
 		exit 0
 }
 
+function finish(){
+
+	echo -e "\n[+] Finish Recon Check Files : "
+
+        echo $target-alive
+	echo $tarjet-JS
+	echo $target-sensitiveinformation
+	echo $target-endpointsC
+	echo $target-cves
+	echo $target-vulnerabilities
+	echo $target-technologies
+
+}
+
 function JS_Extraction(){
 
 		clear
 
-		echo -e "\nChecking is Host Alive"
+		echo -e "\n[+] Extracting JS Files"
 
-		echo "$target" | httpx -silent | tee $target-L
+		sleep 2
 
-		echo -e "\nExtracting JS"
+		cat $target-alive | subjs | tee $target-JS
 
-		echo "$target-L" | subjs
+		echo -e "\n[+] Extracting params and urls from js"
 
-		echo -e "\nExtracting Endpoints"
+		xargs -a $target-JS -n 2 -I@ bash -c "echo -e '\n[URL]: @\n'; python3 /opt/javascript/LinkFinder/linkfinder.py -i @ -o cli"
 
-		echo "$target-L" | getJS -complete | tee $target-JS
+		finish
 
-	  	rm "$target-L"
 
 }
 
@@ -49,6 +62,8 @@ function SensitiveInformation(){
 		cat $target-sensitiveinformation
 
 		echo -e "\n[+]Check File $target-sensitiveinformation"
+
+		JS_Extraction
 
 }
 
@@ -76,25 +91,7 @@ function EndPoints_Extraction(){
 
 		echo -e "\n100% done"
 
-        	cat $target-endpointsC
-
-		echo -e "\nView Files $targets-endpointsC"
-
-		echo -n "[+] Would you like to extrac sensitive information : "
-
-		read $answerSI
-
-		if [ "$answerSI==yes" ]; then
-
-		echo -e "\n[+] yes? OK!"
-
-		SensitiveInformation
-
-		else echo "no"
-
-		crtl_c
-
-		fi
+        	SensitiveInformation
 }
 
 function Nuclei_Attack(){
@@ -109,19 +106,21 @@ function Nuclei_Attack(){
 
         	echo -e "\n0% Checking CVE's"
 
-		echo $target | httpx -silent | nuclei -t /root/nuclei-templates/cves  | tee $target-cves
+	#	cat $target-alive | nuclei -t /root/nuclei-templates/cves  -pbar | tee $target-cves
 
 		echo -e "\n33% Checking vulnerabilities"
 
-		echo $target | nuclei -t /root/nuclei-templates/vulnerabilities  | tee $target-vulnerabilities
+	#	cat $target-alive | nuclei -t /root/nuclei-templates/vulnerabilities -pbar | tee $target-vulnerabilities
 
 		echo -e "\n66% Checking Technologies"
 	
-		cat $target  | nuclei -t /root/nuclei-templates/technologies | tee $target-technologies
+	#	cat $target-alive  | nuclei -t /root/nuclei-templates/technologies -pbar | tee $target-technologies
 
 		echo -e "\n100%"
 
 		echo -e "\nCheck Files $target-cves $target-vulnerabilities $target-technologies"
+
+		EndPoints_Extraction
 
 }
 
@@ -134,25 +133,13 @@ function CheckHost(){
 
 		cat $target-sub-total | httpx -silent | tee $target-alive
 
-		wc -l $target-alive
+    		wc -l $target-alive
 
-		echo -n "\nDo you want to use Nuclei to find vulnerabilities : "
+#		Nuclei_Attack
 
-		read respuesta
+		JS_Extraction
 
-		if [ $respuesta == yes ];then
 
-	        Nuclei_Attack
-
-                else 
-
-		echo "EXIT"
-
-		ctrc_c 
-
-		fi
-
-		exit 0
 }
 
 function Subdomains(){
@@ -219,7 +206,7 @@ while getopts ":T:REAJh" opt; do
 	case ${opt} in
 
 		T ) target=$OPTARG
-		
+	
 		    ;;
 		    
 		R ) Subdomains
