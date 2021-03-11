@@ -1,7 +1,8 @@
-# Recond_subdomains
-# Extract subdomains without API
-# Find Automatic - Vulnerabilities
-# Find Sensiti-Files Informations
-# Find Vulnerable EndPoints
+Recon Subdomains withput api
+Take all subdomains using public repositories
+Check all alive domains - subdomains
+Take Technologies - Vulnerabilities - CVE's
+Take JS endpoints
 
-###############In process##################
+
+
