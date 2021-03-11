@@ -5,11 +5,11 @@ Take Technologies - Vulnerabilities - CVE's \
 Take JS endpoints
 
 # Make Sure you have install this tools in your computer
-jq
-html2text
-nuclei
-httpx
-subjs
+jq \
+html2text \
+nuclei \
+httpx \
+subjs \
 linkfinder
 
 
