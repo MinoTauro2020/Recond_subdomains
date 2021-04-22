@@ -19,15 +19,8 @@ function finish(){
 
 	echo -e "\n[+] Finish Recon Check Files : "
 
-        echo $target-alive
-	echo $tarjet-JS
-	echo $target-sensitiveinformation
-	echo $target-endpointsC
-	echo $target-cves
-	echo $target-vulnerabilities
-	echo $target-technologies
-
 }
+
 
 function JS_Extraction(){
 
@@ -40,8 +33,6 @@ function JS_Extraction(){
 		cat $target-alive | subjs | tee $target-JS
 
 		echo -e "\n[+] Extracting params and urls from js"
-
-		xargs -a $target-JS -n 2 -I@ bash -c "echo -e '\n[URL]: @\n'; python3 /opt/javascript/LinkFinder/linkfinder.py -i @ -o cli"
 
 		finish
 
@@ -82,12 +73,20 @@ function EndPoints_Extraction(){
 		echo -e "\n50%"
 
 		echo "$target"  | waybackurls |  egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' >> $target-endpoints
-
+		
+		echo -e "\n[+] Searching interesting params sql xss rce "
+		
+		cat $target-endpoints | gf sqli | sort -u | uniq | tee $target-endpoints-sqli
+		
+		cat $target-endpoints | gf xss  | sort -u | uniq | tee $target-endpoints-xss
+		
+		cat $target-endpoints | gf rce  | sort -u | uniq | tee $target-endpoints-rce
+		
+		cat $target-endpoints | gf ssti | sort -u | uniq | tee $target-endpoints-redirec
+		
 		echo -e "\nCleaning Duplicates"
 
 		cat "$target-endpoints" | sort -u | uniq | tee $target-endpointsC 
-
-		rm $target-endpoints
 
 		echo -e "\n100% done"
 
@@ -106,21 +105,9 @@ function Nuclei_Attack(){
 
         	echo -e "\n0% Checking CVE's"
 
-	#	cat $target-alive | nuclei -t /root/nuclei-templates/cves  -pbar | tee $target-cves
+		cat $target-alive | nuclei -t /root/nuclei-templates/   | tee $target-nuclei
 
-		echo -e "\n33% Checking vulnerabilities"
-
-	#	cat $target-alive | nuclei -t /root/nuclei-templates/vulnerabilities -pbar | tee $target-vulnerabilities
-
-		echo -e "\n66% Checking Technologies"
-	
-	#	cat $target-alive  | nuclei -t /root/nuclei-templates/technologies -pbar | tee $target-technologies
-
-		echo -e "\n100%"
-
-		echo -e "\nCheck Files $target-cves $target-vulnerabilities $target-technologies"
-
-		EndPoints_Extraction
+		
 
 }
 
@@ -131,14 +118,11 @@ function CheckHost(){
 
 		echo "Checking hosts alive"
 
-		cat $target-sub-total | httpx -silent | tee $target-alive
+		cat $target-sub-total | httpx -silent -ports 80,443,8080,8443 | sort -u | uniq | tee $target-alive
 
     		wc -l $target-alive
 
-#		Nuclei_Attack
-
-		JS_Extraction
-
+		Nuclei_Attack
 
 }
 
@@ -159,6 +143,8 @@ function Subdomains(){
 		echo "30%"
 
 		curl -s "https://www.threatcrowd.org/searchApi/v2/domain/report/?domain=$target"|jq -r '.subdomains' 2>/dev/null |grep -o "\w.*$target" | tr -d "\"," >> $target-sub
+		curl -s "https://sonar.omnisint.io/subdomains/$target" | tr -d "\"" | tr -d "\," | awk ' { print $1 } ' | tr -d "\]"  >> $target-sub
+
 
 		echo "40%"
 
@@ -201,48 +187,28 @@ function Subdomains(){
 
 }
 
-while getopts ":T:REAJh" opt; do
+while getopts ":T:Ah" opt; do
 
 	case ${opt} in
 
 		T ) target=$OPTARG
-	
+
 		    ;;
-		    
-		R ) Subdomains
-		
+ 
+		A ) Subdomains
+
 		    ;;
-		    
-		E ) EndPoints_Extraction
-		
-		    ;;
-		    
-		A ) Nuclei_Attack
-		
-		    ;;
-		    
-		J ) JS_Extraction 
-		
-		    ;;    
-		    
+
+			        
+
 		\? | h ) echo "Usage  :";
-		
+
 			 echo "         -T	Name of Target ";
-			 
-			 echo "         -R	Extract Subdomains ";
-			 
-			 echo "         -E	Extract urls from archive.org ";
-			 
-			 echo "         -J	Extract JS  ";
-			 
-			 echo "         -A	Extract Vulnerabilities Technologies CVE's ";
-			 
-			 echo "         -F       Full Recon ";
-			 
-			 echo "         -h	Displays the usage details";
-			 
+ 
+			 echo "         -A	Extract Subdomains + LiveDomains + Check Vulnerabilities + EndpointsExtracion + SensitiveFiles";
+ 
 		         ;;
-		         
+ 
 		: ) echo "Invalid Argument";
 
 		     ;;
@@ -252,12 +218,6 @@ while getopts ":T:REAJh" opt; do
 done
 
 shift $((OPTIND -1))
-
-
-
-
-
-
 
 
 
